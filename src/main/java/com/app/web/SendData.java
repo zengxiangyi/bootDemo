@@ -1,5 +1,6 @@
 package com.app.web;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -37,4 +38,5 @@ public class SendData {
 	public String printUser(@RequestBody List<String> ids) {		
 		return JsonUtil.toJsonStr(ids);
 	}
+	
 }
