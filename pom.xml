@@ -10,9 +10,9 @@
 		<relativePath />
 	</parent>
 	<groupId>com.app</groupId>
-	<artifactId>hello</artifactId>
+	<artifactId>bootDemo</artifactId>
 	<version>1.0.0</version>
-	<name>hello</name>
+	<name>bootDemo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -83,7 +83,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>hello</finalName>
+		<finalName>bootDemo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
