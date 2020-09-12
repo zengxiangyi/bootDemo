@@ -60,7 +60,7 @@ class HelloControllerTest {
 	@Order(1)
 	void testHello() {
 		try {
-			mockMvc.perform(get("/hello/world")).andExpect(status().isOk())
+			mockMvc.perform(get("/get/world")).andExpect(status().isOk())
 					.andExpect(MockMvcResultMatchers.content().string("hello world")).andDo(print());
 			// Assert.assertEquals("hello lvgang",content);
 		} catch (Exception e) {
