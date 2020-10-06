@@ -1,4 +1,4 @@
-package com.app;
+package com.app.sysConfig;
 
 import javax.servlet.MultipartConfigElement;
 

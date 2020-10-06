@@ -20,8 +20,13 @@ import com.google.gson.reflect.TypeToken;
 
 public class JsonUtil {
 
+	/**
+	 *  日期反序列化
+	 * @return
+	 */
 	public static Gson getGson() {
-		Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>() {
+		Gson gson = new GsonBuilder()
+		.registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>() {
 			@Override
 			public LocalDateTime deserialize(JsonElement json, Type type,
 					JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
@@ -40,8 +45,14 @@ public class JsonUtil {
 		return gson;
 	}
 
+	/**
+	 *  序列化
+	 * @param obj
+	 * @return json文本
+	 */
 	public static String toJsonStr(Object obj) {
-		Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new JsonSerializer<LocalDateTime>() {
+		Gson gson = new GsonBuilder()
+		.registerTypeAdapter(LocalDateTime.class, new JsonSerializer<LocalDateTime>() {
 			@Override
 			public JsonElement serialize(LocalDateTime src, Type typeOfSrc, JsonSerializationContext context) {
 				return new JsonPrimitive(src.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
@@ -56,11 +67,18 @@ public class JsonUtil {
 			public JsonElement serialize(LocalTime src, Type typeOfSrc, JsonSerializationContext context) {
 				return new JsonPrimitive(src.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 			}
-		}).serializeNulls().setPrettyPrinting().create();
+		}).serializeNulls()
+		.setPrettyPrinting()
+		.create();
 
 		return gson.toJson(obj);
 	}
 
+	/**
+	 *  json文本转Object对象
+	 * @param json
+	 * @return
+	 */
 	public Collection<Integer> st(String json) {
 		Type collectionType = new TypeToken<Collection<Integer>>() {
 		}.getType();

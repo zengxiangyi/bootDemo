@@ -1,4 +1,4 @@
-package com.app;
+package com.app.sysConfig;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,7 +17,7 @@ import java.time.format.DateTimeFormatter;
  */
 @Configuration
 public class LocalDateTimeSerializerConfig {
-    @org.springframework.beans.factory.annotation.Value("${spring.jackson.date-format:yyyy-MM-dd HH:mm:ss}")
+    @Value("${spring.jackson.date-format:yyyy-MM-dd HH:mm:ss}")
     private String localDateTimeFormatter;
  
     private String localDateFormatter="yyyy-MM-dd";
